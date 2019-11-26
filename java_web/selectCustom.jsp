@@ -68,6 +68,12 @@ function check()
  <% 
  ArrayList<Custom> list=(ArrayList<Custom>)request.getAttribute("list"); 
  int i=1; 
+String id;
+ String name;
+ String phone;
+ String settime;
+ String livetime;
+ int roomid;
  for(Custom ui:list){
  %>
  <tr> 
@@ -77,33 +83,33 @@ function check()
  <td align="center"><%=ui.getSettime()%>
  <td align="center"><%=ui.getLivetime()%>
   <td align="center"><%=ui.getRoomid()%></tr>
- <% i++; } %> 
+ <% id=ui.getId();i++;name=ui.getName();phone=ui.getPhone();settime=ui.getSettime();livetime=ui.getLivetime();roomid=ui.getRoomid();} %> 
  <tr>
-<td>身份证号</td><td><input type="text" name="customid"></td>
+<td>身份证号</td><td><input type="text" name="customid" value="<%=request.getAttribute("id")%>"></td>
 </tr>
 <tr>
-<td>姓名</td><td><input type="text" name="name"></td>
+<td>姓名</td><td><input type="text" name="name" value="<%=request.getAttribute("name")%>"></td>
 </tr>
 <tr>
 <td>电话</td>
-<td><input type="text" name="phone"></td>
+<td><input type="text" name="phone" value="<%=request.getAttribute("phone")%>"></td>
 </tr>
 <tr>
 <td>入住时间</td>
-<td><input type="text" name="settime"></td>
+<td><input type="text" name="settime" value="<%=request.getAttribute("settime")%>"></td>
 </tr>
 <tr>
 <td>离开时间</td>
-<td><input type="text" name="livetime"></td>
+<td><input type="text" name="livetime" value="<%=request.getAttribute("livetime")%>"></td>
 
 </tr>
 <tr>
 <td>房间号</td>
-<td><input type="text" name="roomid"></td>
+<td><input type="text" name="roomid" ></td>
 </tr>
 <tr>
 <td>原来的房间号</td>
-<td><input type="text" name="lastroomid"></td>
+<td><input type="text" name="lastroomid" value="<%=request.getAttribute("roomid")%>"></td>
 </tr>
 <tr><td><input type="submit" value="确认更新"></td></tr>
  </Form>

@@ -79,7 +79,7 @@ function check()
 </tr>
 <tr>
 <td>·¿¼äºÅ</td>
-<td><input type="text" name="roomid"></td>
+<td><input type="text" name="roomid" value="<%=request.getAttribute("roomid")%>"></td>
 
 </tr>
 </table>
